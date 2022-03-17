@@ -1,0 +1,8 @@
+HTTP/1.0 200 OK
+Cache-Control:       must-revalidate, post-check=0, pre-check=0, private
+Content-Disposition: attachment; filename=teachers.csv
+Content-Type:        text/csv
+Date:                Wed, 16 Mar 2022 13:38:27 GMT
+Expires:             0
+Pragma:              public
+

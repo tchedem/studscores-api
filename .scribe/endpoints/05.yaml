@@ -1,0 +1,132 @@
+name: Users
+description: |-
+
+  API endpoints for managing app Users. Actions on this resource is only allow to 'Admin' and 'Client' users.
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/users
+    metadata:
+      title: 'Display or send a listing of the Users resource.'
+      description: |-
+        <p> https://api.test/api/v1/users </p>
+        Allow autorised user to get listing of Users resource.
+
+        <h3>Get linsting of Users resource in specifique format:</h3>
+        <p> https://api.test/api/v1/users?format=value </p>
+        <strong>format</strong> parmeter can have as value <strong>json</strong> or <strong>csv</strong>.
+
+        <h3>Additional functionnalities:</h3>
+        With this endpoint, you can chain multiple parameters on URI to make filter on Users resource retrive from database.
+        So If you want the User resources which contain name like <strong>luc</strong> you have to use the parameters name:
+
+        <strong style="text-decoration:underline">Ex:</strong>
+        <span> https://api.test/api/v1/users?name=luc </span>
+
+        <strong style="text-decoration:underline">Note:</strong> This filter is only allow for [<strong style="text-decoration:underline">name</strong>, <strong style="text-decoration:underline">type_user</strong>, <strong style="text-decoration:underline">email</strong>, <strong style="text-decoration:underline">valid</strong>] fields
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/users
+    metadata:
+      title: 'Store a newly created User resource in storage.'
+      description: 'The username must be two words (LastName FirstName) separate by space'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: ipehtafchfsxtizykznbuzoiuvipoanqxmkfxehybmlbameiljxwauwcfcbkihnjjmyffnursjuc
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 100 characters.'
+        required: true
+        example: qbsebuzwvtysuqeimgudmjmsvblvzmxrzyzgwdngcslntjeshxezctsddhukyrfmafpqfuqpjumyfecqqjsanlclhzxb
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'Must be at least 6 characters.'
+        required: true
+        example: wyhzg
+        type: string
+        custom: []
+      sex:
+        name: sex
+        description: 'Must be one of <code>M</code> or <code>F</code>.'
+        required: true
+        example: F
+        type: string
+        custom: []
+      type_user:
+        name: type_user
+        description: 'Must be one of <code>admin</code>, <code>academic-manager</code>, <code>teacher</code>, <code>student-respo</code>, or <code>client</code>.'
+        required: true
+        example: academic-manager
+        type: string
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/users/{id}'
+    metadata:
+      title: 'Display the specified User.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
