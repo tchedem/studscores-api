@@ -21,7 +21,7 @@ use App\Http\Resources\API\v1\UserResource;
  * API endpoints for managing app Users. Actions on this resource is only allow to 'Admin' and 'Client' users.
  */
 class UserAPIController extends Controller
-{ 
+{
     public function __construct() {
         // $this->middleware('auth:api', ['except' => ['login', 'register']]);
         $this->middleware('auth:api');
@@ -149,7 +149,9 @@ class UserAPIController extends Controller
 
                 // Send Mail
 
-                return $users->toJson();
+                // return $users->toJson();
+                $users = json_encode($users, JSON_UNESCAPED_UNICODE );
+                return $users;
             }
 
             $users = UserResource::collection(User::paginate(30));

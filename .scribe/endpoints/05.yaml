@@ -64,28 +64,28 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: ipehtafchfsxtizykznbuzoiuvipoanqxmkfxehybmlbameiljxwauwcfcbkihnjjmyffnursjuc
+        example: ykyyaijoognfjqhfmeewdilxkieqgiwuoqszbkvhcwbtwkpcdfmcrjjgkeydxsnlpvjtfexixytgzytdzfxrjnzhpmnqglxahkpujuuzsyxtxgimtx
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 100 characters.'
         required: true
-        example: qbsebuzwvtysuqeimgudmjmsvblvzmxrzyzgwdngcslntjeshxezctsddhukyrfmafpqfuqpjumyfecqqjsanlclhzxb
+        example: aydmgikyiwejdglfhpxhywgedscqgaedlpdxbvfdhinvplwbpzgqggddvnjowzjalmiqcohsguyowtonpwdkqwcbqqamijh
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: wyhzg
+        example: lr
         type: string
         custom: []
       sex:
         name: sex
         description: 'Must be one of <code>M</code> or <code>F</code>.'
         required: true
-        example: F
+        example: M
         type: string
         custom: []
       type_user:

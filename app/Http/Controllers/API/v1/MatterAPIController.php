@@ -77,7 +77,9 @@ class MatterAPIController extends Controller
                 $matters = Matter::all();
                 Log::addToLog('Export Log', $request, 'JSON Export');
 
-                return $matters->toJson();
+                // return $matters->toJson();
+                $matters = json_encode($matters, JSON_UNESCAPED_UNICODE );
+                return $matters;
             }
 
             $matters = MatterResource::collection(Matter::paginate(30));

@@ -1,6 +1,6 @@
 # Introduction
 
-StudScore API | One of the best API for student data migration
+StudScore API | One of the best API for student data migration.
 
 This documentation aims to provide all the information you need to work with our API.
 

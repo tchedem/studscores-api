@@ -81,7 +81,9 @@ class ScoreAPIController extends Controller
                 $scores = Score::all();
                 Log::addToLog('Export Log', $request, 'JSON Export');
 
-                return $scores->toJson();
+                // return $scores->toJson();
+                $scores = json_encode($scores, JSON_UNESCAPED_UNICODE );
+                return $scores;
             }
 
             $scores = ScoreResource::collection(Score::paginate(30));

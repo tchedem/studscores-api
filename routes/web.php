@@ -47,6 +47,8 @@ Route::get('sendhtmlemail', [MailController::class, 'html_email']);
 Route::get('sendattachmentemail', [MailController::class, 'attachment_email']);
 // Route::get('sendhtmlemail','MailController@html_email');
 // Route::get('sendattachmentemail','MailController@attachment_email');
+// Route::get('testemail', [MailController::class, 'api_email']);
+Route::get('testemail', [DashboardController::class, 'api_email']);
 
 
 Route::get('/test', function(){

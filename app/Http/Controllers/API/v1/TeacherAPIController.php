@@ -14,6 +14,7 @@ use App\Models\Teacher;
 use App\Http\Resources\API\v1\TeacherResource;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\MailController;
 use Illuminate\Http\Request;
 
 
@@ -101,16 +102,43 @@ class TeacherAPIController extends Controller
                 // $UserName
                 // File::put($path.auth()->user()->id.'_'.$date.'.csv', $file); //dd($csvFile);
 
-                // Add log in database
+                // Add Log in database
                 Log::addToLog('Export Log', $request, 'CSV Export');
-                return response()->stream($callback, 200, $headers);
+
+                if(isset($teachers)){
+                    $mailSend = (new MailController)->extractionsMailler(auth()->user()->email, auth()->user()->name, 'teachers', 'csv');
+                    if($mailSend){
+                        // return $teachers;
+                        return response()->stream($callback, 200, $headers);
+                    }
+                }
+
+                // return response()->stream($callback, 200, $headers);
             }
 
             if( $request->format && $request->format == 'json' ){
                 $teachers = Teacher::all();
+
+                //Add Log in database
                 Log::addToLog('Export Log', $request, 'JSON Export');
                 //Permettre le telechargement
-                return $teachers->toJson();
+                // $response = response()->json($teachers);
+                // $response->header('Content-Type', 'application/json');
+                // $response->header('charset', 'utf-8');
+
+                $teachers = json_encode($teachers, JSON_UNESCAPED_UNICODE ); //return auth()->user()->name;
+                if(isset($teachers)){
+                    $mailSend = (new MailController)->extractionsMailler(auth()->user()->email, auth()->user()->name, 'teachers', 'json');
+                    if($mailSend){
+                        return $teachers;
+                    }
+                }
+
+                // return $teachers;
+
+                // $response = json_decode();
+
+                // return $response;
             }
 
             // Here we just made specifique validation for first_name and last_name [first_name, last_name, email, valid, gender, phone_number, description]

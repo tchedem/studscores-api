@@ -31,7 +31,7 @@ class UserTableSeeder extends Seeder
             [
                 'id' => 2,
                 'name' => 'Pierre Zohoun',
-                'email' => 'pzohoun@gmail.com',
+                'email' => 'pzohou@gmail.com',
                 'password' => Hash::make('12345678'),
                 'type_user' => 'academic-manager',
             ],[
@@ -52,7 +52,7 @@ class UserTableSeeder extends Seeder
             [
                 'id' => 6,
                 'name' => 'okapi_client',
-                'email' => 'okapi_client@uac.bj',
+                'email' => 'okapiclient@gmail.com',
                 'password' => Hash::make('12345678'),
                 'type_user' => 'client',
             ],

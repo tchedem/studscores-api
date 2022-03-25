@@ -7,312 +7,6 @@ servers:
   -
     url: 'https://api.test'
 paths:
-  '/api/v1/matters/{id}':
-    get:
-      summary: 'Display the specified Matter resource.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Matters
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the matter.'
-        example: 2
-        required: true
-        schema:
-          type: integer
-  /api/v1/matters:
-    get:
-      summary: 'Display a listing of the resource.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Matters
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                format:
-                  type: string
-                  description: ''
-                  example: distinctio
-  '/api/v1/scores/{id}':
-    get:
-      summary: 'Display the specified Score resource.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Scores
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the score.'
-        example: 1
-        required: true
-        schema:
-          type: integer
-  /api/v1/scores:
-    get:
-      summary: 'Display a listing of the resource.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Scores
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                format:
-                  type: string
-                  description: ''
-                  example: nam
-  /api/v1/students:
-    get:
-      summary: 'Display a listing of the resource.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Students
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                format:
-                  type: string
-                  description: ''
-                  example: mollitia
-  '/api/v1/students/{id}':
-    get:
-      summary: 'Display the specified Student resource.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Students
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the student.'
-        example: 17
-        required: true
-        schema:
-          type: integer
   /api/v1/login:
     post:
       summary: 'Get a JWT via given credentials.'
@@ -345,11 +39,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: ntillman@example.org
+                  example: jeremie65@example.com
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: vvkbgz
+                  example: f
               required:
                 - email
                 - password
@@ -453,6 +147,312 @@ paths:
       responses: {  }
       tags:
         - Endpoints
+  '/api/v1/matters/{id}':
+    get:
+      summary: 'Display the specified Matter resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Matters
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the matter.'
+        example: 8
+        required: true
+        schema:
+          type: integer
+  /api/v1/matters:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Matters
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                format:
+                  type: string
+                  description: ''
+                  example: beatae
+  '/api/v1/scores/{id}':
+    get:
+      summary: 'Display the specified Score resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Scores
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the score.'
+        example: 12
+        required: true
+        schema:
+          type: integer
+  /api/v1/scores:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Scores
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                format:
+                  type: string
+                  description: ''
+                  example: reprehenderit
+  /api/v1/students:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Students
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                format:
+                  type: string
+                  description: ''
+                  example: ab
+  '/api/v1/students/{id}':
+    get:
+      summary: 'Display the specified Student resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Students
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the student.'
+        example: 12
+        required: true
+        schema:
+          type: integer
   /api/v1/teachers:
     get:
       summary: 'Display or send a listing of the Teachers resource.'
@@ -504,7 +504,7 @@ paths:
                 format:
                   type: string
                   description: ''
-                  example: sequi
+                  example: possimus
   '/api/v1/teachers/{id}':
     get:
       summary: 'Display the specified Teacher resource.'
@@ -579,7 +579,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the teacher.'
-        example: 4
+        example: 15
         required: true
         schema:
           type: integer
@@ -662,19 +662,19 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ipehtafchfsxtizykznbuzoiuvipoanqxmkfxehybmlbameiljxwauwcfcbkihnjjmyffnursjuc
+                  example: ykyyaijoognfjqhfmeewdilxkieqgiwuoqszbkvhcwbtwkpcdfmcrjjgkeydxsnlpvjtfexixytgzytdzfxrjnzhpmnqglxahkpujuuzsyxtxgimtx
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 100 characters.'
-                  example: qbsebuzwvtysuqeimgudmjmsvblvzmxrzyzgwdngcslntjeshxezctsddhukyrfmafpqfuqpjumyfecqqjsanlclhzxb
+                  example: aydmgikyiwejdglfhpxhywgedscqgaedlpdxbvfdhinvplwbpzgqggddvnjowzjalmiqcohsguyowtonpwdkqwcbqqamijh
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: wyhzg
+                  example: lr
                 sex:
                   type: string
                   description: 'Must be one of <code>M</code> or <code>F</code>.'
-                  example: F
+                  example: M
                 type_user:
                   type: string
                   description: 'Must be one of <code>admin</code>, <code>academic-manager</code>, <code>teacher</code>, <code>student-respo</code>, or <code>client</code>.'
@@ -737,6 +737,9 @@ paths:
           type: integer
 tags:
   -
+    name: Endpoints
+    description: ''
+  -
     name: Matters
     description: "\nAPI endpoints for managing app Matters. Actions on this resource is only allow to 'Admin' and 'Client' users."
   -
@@ -745,9 +748,6 @@ tags:
   -
     name: Students
     description: "\nAPI endpoints for managing app Students. Actions on this resource is only allow to 'Admin' and 'Client' users."
-  -
-    name: Endpoints
-    description: ''
   -
     name: Teachers
     description: "\nAPI endpoints for managing app Teachers. Actions on this resource is only allow to 'Admin' and 'Client' users."

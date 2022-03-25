@@ -83,7 +83,9 @@ class StudentAPIController extends Controller
                 $students = Student::all();
                 Log::addToLog('Export Log', $request, 'JSON Export');
 
-                return $students->toJson();
+                // return $students->toJson();
+                $students = json_encode($students, JSON_UNESCAPED_UNICODE );
+                return $students;
             }
 
             $students = StudentResource::collection(Student::paginate(30));
