@@ -184,16 +184,14 @@ class UserAPIController extends Controller
             }
 
             // Validation for body RAW
-            // $validated = $request->all()->validate([
-            //     'name' => 'required|unique:users|max:255',
-            //     'sex' => ['required', Rule::in(['M','F'])],
-            //     // 'type_user' => ['required', Rule::in(['admin', 'academic-manager', 'teacher','student-respo', 'client'])],
-            //     // 'email' => 'required',
-            //     // 'phone_number' => 'required',
-            //     // 'description' => 'required',
-            //     // 'valid' => 'required',
-            //     // 'password' => 'required',
-            // ]);
+            $data = $request->validate([
+                'name' => 'required|max:255',
+                'sex' => ['required', Rule::in(['M','F'])],
+                'type_user' => ['required', Rule::in(['admin', 'academic-manager', 'teacher','student-respo', 'client'])],
+                'email' => 'required|unique:users|email',
+                'password' => 'required|min:5',
+            ]);
+
 
             // return $request->getContent();
 
@@ -203,7 +201,7 @@ class UserAPIController extends Controller
                     'message' => "Unauthorised, The user already exist.",
                 ], 401);
             }
-
+            
             $user = User::create($request->all());
 
             // Add to logs
@@ -275,6 +273,7 @@ class UserAPIController extends Controller
      */
     public function update(Request $request, $id)
     {
+        return $id;
         //Create custom Requests (Requests/API/v1/update)
         // Validation for body FormRequest
         $validator = Validator::make($request->all(), [

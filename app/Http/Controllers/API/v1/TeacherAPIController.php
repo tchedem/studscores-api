@@ -132,7 +132,10 @@ class TeacherAPIController extends Controller
                     if($mailSend){
                         return $teachers;
                     }
+                    return "Mail non envoyer";
                 }
+
+                return "Aucun element trouver";
 
                 // return $teachers;
 
