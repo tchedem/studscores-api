@@ -1,7 +1,7 @@
 @extends('layouts_perso.dashboard')
 
 @section('title')
-<title>StudScore API Manager | Dashboard</title>
+<title>StudScore API Manager | Logs</title>
 @endsection
 
 @section('body')
@@ -46,36 +46,73 @@
         <div class="content">
             <div class="container">
 
-                <!-- Default box -->
-                <div class="card">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="card card-primary card-outline">
+
                     <div class="card-header">
-                    <h3 class="card-title">Title</h3>
+                      <h3 class="col text-center">Logs</h3>
+                    </div>
 
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                        <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                        <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    </div>
                     <div class="card-body">
-                    Check the Header part you can find Language Changing Options with Icon.
-                    <br>
-                    Start creating your amazing application!
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                    Footer
-                    </div>
-                    <!-- /.card-footer-->
-                </div>
-                <!-- /.card -->
 
+                      {{-- <p class="text-center" style="border:1px solid black;">
+                        Aucun fichier
+                      </p> --}}
+
+                      <table id="example1" class="table table-bordered table-responsive">
+                          <thead>
+                              <tr>
+                                  <th>id</th>
+                                  <th>subject</th>
+                                  {{-- <th>query_request</th> --}}
+                                  <th>query_type</th>
+                                  {{-- <th>transaction_id</th> --}}
+                                  <th>url</th>
+                                  <th>method</th>
+                                  <th>ip</th>
+                                  <th>agent</th>
+                                  <th>user_id</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              @foreach($logs as $log)
+                              <tr>
+                                  <td>{{$log->id}}</td>
+                                  <td>{{$log->subject}}</td>
+                                  {{-- <td>{{$log->query_request}}</td> --}}
+                                  <td>{{$log->query_type}}</td>
+                                  {{-- <td>{{$log->transaction_id}}</td> --}}
+                                  <td>{{$log->url}}</td>
+                                  <td>{{$log->method}}</td>
+                                  <td>{{$log->ip}}</td>
+                                  <td>{{$log->agent}}</td>
+                                  <td>{{$log->user_id}}</td>
+                              </tr>
+                              @endforeach
+
+                          </tbody>
+                          <tfoot>
+                              <tr>
+                                <th>id</th>
+                                <th>subject</th>
+                                {{-- <th>query_request</th> --}}
+                                <th>query_type</th>
+                                {{-- <th>transaction_id</th> --}}
+                                <th>url</th>
+                                <th>method</th>
+                                <th>ip</th>
+                                <th>agent</th>
+                                <th>user_id</th>
+                              </tr>
+                          </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-        <!-- /.content -->
+          </div>
       </div>
       <!-- /.content-wrapper -->
 
@@ -128,22 +165,6 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
     <!-- Page specific script -->
-    <script>
-      $(function () {
-        $("#example1").DataTable({
-          "responsive": true, "lengthChange": false, "autoWidth": false,
-          "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false,
-          "responsive": true,
-        });
-      });
-    </script>
+    
 </body>
 @endsection

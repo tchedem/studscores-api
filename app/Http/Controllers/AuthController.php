@@ -34,9 +34,11 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
+// dd($request);
+        // return redirect()->route('logs');
         if(auth()->attempt($request->only('email', 'password'))){ //auth() est une helper
-            return redirect()->route('dashboard');
+            return redirect()->route('logs');
+            // return redirect()->route('dashboard');
         }
 
         redirect()->back()->withErrors('Les identifiants sont incorrects.');

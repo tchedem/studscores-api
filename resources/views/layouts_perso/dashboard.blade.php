@@ -5,6 +5,7 @@
 
         {{-- <title> {{ config("app.name") }} | {{ $title ?? 'Dashboard' }}  </title> --}}
         @yield('title')
+        <meta http-equiv="refresh" content="6;url={{Request::url()}}" />
 
         <link rel="shortcut icon" type="image/jpg" href="{{ asset('img/favicon/112529.png') }}"/>
 

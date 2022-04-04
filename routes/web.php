@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LogsController;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
@@ -33,6 +34,8 @@ Route::get('/', function () {
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 
 Route::post('/login', [AuthController::class, 'authenticate'])->name('authenticate');
+
+Route::get('/logs', [LogsController::class, 'index'])->name('logs');
 
 Route::get('/reset-password', [AuthController::class, 'reset_password'])->name('reset-password');
 
